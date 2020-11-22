@@ -46,10 +46,20 @@ window.addEventListener('load', () => {
     .setClass('site-status')
     .setAttribute('innerHTML', '<span>x:<span id="cursor-x">0</span>y:<span id="cursor-y">0</span>');
 
+  /*
+  // E _ 可輸入文字的內框
+  // D _ 輸入框 E 的外框，包含 E
+  // C _ 標籤 (血量、姓名、攻擊力...等)
+  // B _ 包含 D、E
+  // A _ 包含 Bname、Bhp、Bap、Bdp
+  */
+
   // 姓名
   let Ename = Html('input')
     .setClass('input')
-    .setAttribute('innerHTML', 'name');
+    .setAttribute('placeholder', '李知勳')
+    .setAttribute('id', 'name')
+    .setAttribute('type', 'text');
 
   let Dname = Html('p')
     .setClass('control')
@@ -57,6 +67,7 @@ window.addEventListener('load', () => {
 
   let Cname = Html('label')
     .setClass('control-label')
+    .setAttribute('htmlFor', 'name')
     .setAttribute('innerHTML', '姓名');
 
   let Bname = Html('div')
@@ -67,7 +78,9 @@ window.addEventListener('load', () => {
   // 血量
   let Ehp = Html('input')
     .setClass('input')
-    .setAttribute('innerHTML', 'hp');
+    .setAttribute('placeholder', '1122')
+    .setAttribute('id', 'hp')
+    .setAttribute('type', 'number');
 
   let Dhp = Html('p')
     .setClass('control')
@@ -75,7 +88,8 @@ window.addEventListener('load', () => {
 
   let Chp = Html('label')
     .setClass('control-label')
-    .setAttribute('innerHTML', '血量');
+    .setAttribute('htmlFor', 'hp')
+    .setAttribute('innerHTML', '血量 (hp)');
 
   let Bhp = Html('div')
     .setClass('h-field')
@@ -85,7 +99,9 @@ window.addEventListener('load', () => {
   // 攻擊力
   let Eap = Html('input')
     .setClass('input')
-    .setAttribute('innerHTML', 'ap');
+    .setAttribute('placeholder', '1996')
+    .setAttribute('id', 'ap')
+    .setAttribute('type', 'number');
 
   let Dap = Html('p')
     .setClass('control')
@@ -93,7 +109,8 @@ window.addEventListener('load', () => {
 
   let Cap = Html('label')
     .setClass('control-label')
-    .setAttribute('innerHTML', '攻擊力');
+    .setAttribute('htmlFor', 'ap')
+    .setAttribute('innerHTML', '攻擊力 (ap)');
 
   let Bap = Html('div')
     .setClass('h-field')
@@ -103,7 +120,9 @@ window.addEventListener('load', () => {
   // 防禦力
   let Edp = Html('input')
     .setClass('input')
-    .setAttribute('innerHTML', 'dp');
+    .setAttribute('placeholder', '1717')
+    .setAttribute('id', 'dp')
+    .setAttribute('type', 'number');
 
   let Ddp = Html('p')
     .setClass('control')
@@ -111,7 +130,8 @@ window.addEventListener('load', () => {
 
   let Cdp = Html('label')
     .setClass('control-label')
-    .setAttribute('innerHTML', '防禦力');
+    .setAttribute('htmlFor', 'dp')
+    .setAttribute('innerHTML', '防禦力 (dp)');
 
   let Bdp = Html('div')
     .setClass('h-field')
@@ -170,14 +190,14 @@ window.addEventListener('load', () => {
     .querySelector('.site-body')
     .appendChild(cardDesktop.node);
 
-  /**
-   * 滑鼠游標移動追踪
-   *
-   * @callback
-   * @param 'mousemove' : DOM 事件名
-   * @param e : DOM event 物件
-   * @returns {undefined}
-   */
+  /*
+  // 滑鼠游標移動追踪
+  //
+  // @callback
+  // @param 'mousemove' : DOM 事件名
+  // @param e : DOM event 物件
+  // @returns {undefined}
+  */
   desktop.addEventListener('mousemove', (e) => {
     document.getElementById('cursor-x').textContent = e.clientX;
     document.getElementById('cursor-y').textContent = e.clientY;
