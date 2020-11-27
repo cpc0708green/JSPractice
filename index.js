@@ -1,3 +1,8 @@
+/*
+109-1 網頁程式設計 期中評量
+CHEN PEI CHI 20201125
+*/
+
 'use strict';
 
 let Html = function (tag) {
